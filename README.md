@@ -1,4 +1,4 @@
-# Veterinaria Login
+# Veterinaria Login v1 - Basico
 
 Proyecto de formulario de inicio de sesión para una aplicación de veterinaria. Este proyecto proporciona una interfaz simple, limpia y responsiva para el login de usuarios.
 
