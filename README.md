@@ -22,7 +22,7 @@ Este proyecto consiste en una página de inicio de sesión diseñada para ser ut
 
 1. *Clonar el repositorio*:
     bash
-    git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+    git clone https://github.com/The-Nasa/MC_CONSTRUCION_SW.git
     
    
 2. *Abrir el proyecto*:
@@ -44,23 +44,9 @@ Este proyecto organiza el código según los principios de Clean Code y SOLID pa
    - Estilos generales.
    - Estilos específicos de componentes (como el contenedor del login y los botones).
 
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas! Para contribuir:
-
-1. Haz un fork del proyecto.
-2. Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
-3. Realiza tus cambios y haz un commit (git commit -m 'Agregar nueva funcionalidad').
-4. Haz push a la rama (git push origin feature/nueva-funcionalidad).
-5. Abre un Pull Request.
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
-
 ## 📧 Contacto
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarme en *[tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)*.
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme en *[meselemias.tapullima@unas.edu.pe](mailto:meselemias.tapullima@unas.edu.pe)*.
 
 ---
 *¡Gracias por visitar y contribuir al proyecto!*
