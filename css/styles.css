@@ -1,0 +1,93 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Contenedor Principal */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(' ../img/fondo-login.jpg') no-repeat center center fixed; /* Fondo de pantalla completo */
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    background-color: transparent; /* Fondo semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    max-width: 90%;
+    text-align: center;
+    padding: 20px;
+    padding-top: 100px;
+
+}
+
+/* Formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.form-label {
+    color: #333;
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    font-size:  18px; ;
+}
+
+.form-input {
+    width: 100%;
+    max-width: 240px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color:  #63ce66;
+    color: white;
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
+
+.btn-primary:hover {
+    background-color: #2D2D2D;
+    background-color: rgb(29, 71, 71);
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
