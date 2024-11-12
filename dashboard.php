@@ -1,44 +1,54 @@
 <?php
 session_start();
 if (!isset($_SESSION["txtusername"])) {
-    header("Location: http://127.0.0.1/sistema/index.php");
+    header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/index.php");
+    exit();
 }
 ?>
- 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Veterinaria - Menú</title>
     <link rel="stylesheet" href="css/stylesdashboard.css">
 </head>
 <body>
+    <!-- Menú de navegación -->
     <header>
-        <nav class="menu">
-            <ul>
-                <li><a href="?opcion=inicio"> inicio </a></li>
-                <li><a href="?opcion=ver"> Ver </a></li>
-                <li><a href="?opcion=ingresar"> ingresar </a></li>
-                <li><a href="?opcion=modificar"> modificar </a></li>
-                <li><a href="?opcion=eliminar"> Eliminar </a></li>
-                <li><a href="http://127.0.0.1/sistema/logout.php">Salir</a></li>
+        <nav class="navbar">
+            <h1 class="logo">Veterinaria</h1>
+            <ul class="menu">
+                <li><a href="?opcion=inicio">Inicio</a></li>
+                <li><a href="?opcion=servicios">Servicios</a></li>
+                <li><a href="?opcion=citas">Citas</a></li>
+                <li><a href="?opcion=productos">Productos</a></li>
+                <li><a href="?opcion=contacto">Contacto</a></li>
+                <li><a href="?opcion=sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="http://127.0.0.1/MC_CONSTRUCION_SW/logout.php">Salir</a></li>
             </ul>
         </nav>
-    </header>      
+    </header>
 
+    <!-- Contenido principal -->
+
+    <section>
+        <h2>BIENVENIDOS A NUESTRO SISTEMA</h2>
+    </section>   
+
+    
     <div class="contenido">
         <?php
+        // Mostrar el contenido según la opción seleccionada en el menú
         if (isset($_GET["opcion"])) {
             $opcion = $_GET["opcion"];
             echo $opcion;
         }
         ?>
     </div>
-    <a href="http://127.0.0.1/sistema/logout.php">salir del sistema</a>
-    
+
+    <!-- <a href="http://127.0.0.1/MC_CONSTRUCION_SW/logout.php">salir del sistema</a> -->
+
 </body>
 </html>
-
-
-

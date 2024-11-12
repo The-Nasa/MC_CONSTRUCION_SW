@@ -25,8 +25,9 @@ echo "favorite animal is ".$_SESSION["favanimal"] = "cat";
 PAGINA DE VER VARIABLES
 </br>
 
-<a href="http://127.0.0.1/sistema/vervariables.php">actualizar pagina </a>
-<a href="http://127.0.0.1/sistema/borrarvariables.php">limpia la variables </a>
+<a href="http://127.0.0.1/MC_CONSTRUCION_SW/vervariables.php">actualizar pagina </a>
+<a href="http://127.0.0.1/MC_CONSTRUCION_SW/borrarvariables.php">limpia la variables </a>
 
 </body>
 </html>
+

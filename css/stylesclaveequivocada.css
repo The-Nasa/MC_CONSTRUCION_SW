@@ -1,0 +1,74 @@
+/* Fondo de superposición */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor de la "ventana" */
+.container {
+    position: relative;
+    width: 350px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de ventana */
+    text-align: center;
+    animation: popup 0.3s ease-out;
+}
+
+/* Animación para que la ventana aparezca suavemente */
+@keyframes popup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilo del título */
+h1 {
+    color: #e63946;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para el enlace */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #457b9d;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en el enlace */
+a:hover {
+    background-color: #1d3557;
+}   
+
+/* Estilo del borde superior de la ventana */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: #e63946; /* Color de la línea superior */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}

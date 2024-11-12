@@ -21,10 +21,11 @@
 
         $v_username = "";
         $v_password = "";
+        
         if (isset($_POST["txtusername"]) ) {
-            $v_username = $_POST["txtusername"];
-            
+            $v_username = $_POST["txtusername"];  
         }
+
         if (isset($_POST["txtpassword"]) ) {
             $v_password = $_POST["txtpassword"];
         }
@@ -32,10 +33,12 @@
         if (($v_username == "admin" && $v_password == "1234")) {
             $_SESSION["txtusername"] = $v_username;
             $_SESSION["txtpassword"]= $v_password;
-            header("Location: dashboard.php");
+            //header("location: dashboard.php");
+            header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/dashboard.php");
            //echo "dashboard";
         }else {
-            header("Location: claveequivocada.php");
+            //header("Location: claveequivocada.php");
+            header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/claveequivocada.php");
             //echo "clave equivocada";
         }
     }
@@ -43,16 +46,13 @@
     //en caso de que el usuario no se haya logueado - precione directamente sobre la URL inicial
     //ya hay un usuario logueado, asi que le pongo en pantalla
     if (isset($_SESSION["txtusername"])) {
-        header("Location: dashboard.php");
-
-
+        //header("Location: dashboard.php");
+        header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/dashboard.php");
     }
-
     ?>
- 
 
     <main class="login-container">
-        <!-- Formulario de inicio de sesión -->
+         <!-- Formulario de inicio de sesión -->
         <form class="login-form" action="" method="POST">
 
             <div class="form-group">
@@ -64,8 +64,8 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name = "txtpassword" id = "txtpassword" placeholder="Password"  class="form-input" required>
             </div>
-
-            <button type="submit" class="btn btn-primary">Remenber me</button>
+                
+            <button  class="btn btn-primary">Remenber me</button>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </main>
