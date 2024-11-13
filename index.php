@@ -1,30 +1,36 @@
+<?php
+        require_once $_SERVER["DOCUMENT_ROOT"].'/etc/config.php';
+        require_once $_SERVER["DOCUMENT_ROOT"].'/models/connect/conexion.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Veterinaria</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="<?php echo get_UrlBase ('css/styles.css')?>">
 </head>
 <body>
 
     <?php
-    session_start();
-    if ($_SERVER ["REQUEST_METHOD"] == "POST") {
-        //echo "<br>";
-        //echo "SE EMBIARON LAS SIGUIENTES VARIABLES: ";
-        //echo "<br>";
-        //echo $_POST["txtusername"];
-        //echo "<br>";
-        //echo $_POST["txtpassword"];
-        //echo "<br>";
 
-        $v_username = "";
-        $v_password = "";
+        session_start();
+        if ($_SERVER ["REQUEST_METHOD"] == "POST") {
+            //echo "<br>";
+            //echo "SE EMBIARON LAS SIGUIENTES VARIABLES: ";
+            //echo "<br>";
+            //echo $_POST["txtusername"];
+            //echo "<br>";
+            //echo $_POST["txtpassword"];
+            //echo "<br>";
+
+            $v_username = "";
+            $v_password = "";
         
-        if (isset($_POST["txtusername"]) ) {
+            if (isset($_POST["txtusername"]) ) {
             $v_username = $_POST["txtusername"];  
-        }
+            }
 
         if (isset($_POST["txtpassword"]) ) {
             $v_password = $_POST["txtpassword"];
@@ -34,11 +40,11 @@
             $_SESSION["txtusername"] = $v_username;
             $_SESSION["txtpassword"]= $v_password;
             //header("location: dashboard.php");
-            header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/dashboard.php");
+            header('Location: '.get_views('dashboard.php'));
            //echo "dashboard";
         }else {
             //header("Location: claveequivocada.php");
-            header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/claveequivocada.php");
+            header('Location: '.get_views('claveequivocada.php'));
             //echo "clave equivocada";
         }
     }
@@ -47,7 +53,7 @@
     //ya hay un usuario logueado, asi que le pongo en pantalla
     if (isset($_SESSION["txtusername"])) {
         //header("Location: dashboard.php");
-        header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/dashboard.php");
+        header('Location: '.get_views('dashboard.php'));
     }
     ?>
 

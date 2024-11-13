@@ -1,9 +1,14 @@
 <?php
-session_start();
-if (!isset($_SESSION["txtusername"])) {
-    header("Location: http://127.0.0.1/MC_CONSTRUCION_SW/index.php");
+
+    session_start();
+    if (!isset($_SESSION["txtusername"])) {
+    header('Location: '.get_UrlBase ('index.php'));
     exit();
-}
+    
+    }
+    require_once $_SERVER["DOCUMENT_ROOT"].'/etc/config.php';
+    require_once $_SERVER["DOCUMENT_ROOT"].'/models/connect/conexion.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +17,7 @@ if (!isset($_SESSION["txtusername"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinaria - Menú</title>
-    <link rel="stylesheet" href="css/stylesdashboard.css">
+    <link rel="stylesheet" href="<?php echo get_UrlBase ('css/stylesdashboard.css')?>">
 </head>
 <body>
     <!-- Menú de navegación -->
@@ -26,7 +31,7 @@ if (!isset($_SESSION["txtusername"])) {
                 <li><a href="?opcion=productos">Productos</a></li>
                 <li><a href="?opcion=contacto">Contacto</a></li>
                 <li><a href="?opcion=sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="http://127.0.0.1/MC_CONSTRUCION_SW/logout.php">Salir</a></li>
+                <li><a href="<?php echo get_controllers('logout.php') ?>">Salir</a></li>
             </ul>
         </nav>
     </header>

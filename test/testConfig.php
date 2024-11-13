@@ -4,11 +4,12 @@
 
 //include_once cargar solo una vez
 //require_once 
+// http://MC_CONSTRUCION_SW.test/test/testConfig.php
+//require_once 'etc/config.php'
 
-//require_once "etc/config.php"
+require_once $_SERVER["DOCUMENT_ROOT"].'/etc/config.php';
+//echo $_urlBase;
 
-require_once $_SERVER["DOCUMENT_ROOT"]."/MC_CONSTRUCION_SW/etc/config.php";
-
-//echo get_UrlBase("pagina.php");
+//echo get_UrlBase('pagina.php');
 
 ?>

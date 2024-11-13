@@ -1,3 +1,7 @@
+<?php
+    require_once $_SERVER["DOCUMENT_ROOT"].'/etc/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
 <body>
     <div class="container">
         <h1>CLAVE EQUIVOCADA. VUELVA A INTENTAR</h1>
-        <a href="http://127.0.0.1/MC_CONSTRUCION_SW">VOLVER AL LOGIN</a>
+        <a href="<?php echo get_UrlBase ('index.php')?>">VOLVER AL LOGIN</a>
     </div>
 </body>
 </html>
