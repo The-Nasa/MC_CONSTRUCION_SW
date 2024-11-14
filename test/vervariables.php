@@ -16,7 +16,7 @@ echo "favorite animal is ".$_SESSION["favanimal"] = "cat";
 } else 
 {
     echo "NO EXISTEN VARIABLES";
-    echo "<br>"
+    echo "<br>";
 }
 
 ?>
