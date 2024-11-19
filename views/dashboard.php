@@ -39,7 +39,6 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
     <div class="main-content">
         <header>
             <h1>Bienvenido, <?php echo $_SESSION["txtusername"]; ?></h1>
-            <p>Gestiona las opciones del sistema desde el menú de la izquierda.</p>
         </header>
         
         <section class="contenido-dinamico">
