@@ -19,27 +19,39 @@ $pdo = $conecxion->obtenerconexion();
 $query = $pdo->query("SELECT id, username, password, perfil FROM usuarios");
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Datos</title>
+    <link rel="stylesheet" href="../css/stylesverdatos.css">
+</head>
+<body>
+<div class="container">
+        <h2>Lista de Usuarios del Sistema</h2>
+        <table>
+            <tr>
+                <th>ID</th> 
+                <th>Username</th>
+                <th>Password</th>
+                <th>Perfil</th>
+            </tr>
+            <?php
+            // Ejecutar consulta y mostrar los datos
+            while ($fila = $query->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+            <tr>
+                <td><?php echo $fila['id']; ?></td>
+                <td><?php echo $fila['username']; ?></td>
+                <td><?php echo $fila['password']; ?></td>
+                <td><?php echo $fila['perfil']; ?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
+</body>
+</html>
 
-<h2>LISTA DE USUARIOS DEL SISTEMA</h2>
-<table border="1">
-    <tr>
-        <th>id</th> 
-        <th>username</th>
-        <th>password</th>
-        <th>perfil</th>
-
-    </tr>
-    <?php
-    while ($fila = $query->fetch(PDO::FETCH_ASSOC)) {
-
-    ?>
-        <tr>
-            <td> <?php echo $fila['id']; ?></td>
-            <td><?php echo $fila['username']; ?></td>
-            <td><?php echo $fila['password']; ?></td>
-            <td><?php echo $fila['perfil']; ?></td>
-        </tr>
-    <?php
-    }
-    ?>
-</table>

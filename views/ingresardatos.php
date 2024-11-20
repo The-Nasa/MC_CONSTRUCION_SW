@@ -37,14 +37,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 ?>
-<h2>INGRESAER USUARIO</h2>
-<form action="" method="POST">
-    <label for="datusuario">Usuario</label>
-    <input type="text" name="datusuario" id="datusuario">
-    <label for="datpassword">Password</label>
-    <input type="password" name="datpassword" id="datpassword">
-    <label for="datperfil">Perfil</label>
-    <input type="text" name="datperfil" id="datperfil">
+<!DOCTYPE html>
+<html lang="en">
 
-    <button type="submit">Ingresar Usuario</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Datos</title>
+    <link rel="stylesheet" href="../css/stylesingresardatos.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>INGRESAER USUARIO</h2>
+        <form action="" method="POST">
+            <label for="datusuario">Usuario</label>
+            <input type="text" name="datusuario" id="datusuario">
+            <label for="datpassword">Password</label>
+            <input type="password" name="datpassword" id="datpassword">
+            <label for="datperfil">Perfil</label>
+            <input type="text" name="datperfil" id="datperfil">
+
+            <button type="submit">Ingresar Usuario</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

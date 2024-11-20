@@ -1,0 +1,79 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #588383;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal del formulario de ver datos */
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Título del formulario */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo para las celdas y bordes de la tabla */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Fondo y estilo de los encabezados de las columnas */
+th {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Estilo de las celdas de la tabla */
+td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Fila alterna para un mejor contraste */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo de los botones (si los añades después) */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

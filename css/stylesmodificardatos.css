@@ -1,0 +1,100 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #588383;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal del formulario */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+/* Título del formulario */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Estilo para los inputs */
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    width: 80%;
+    max-width: 350px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Mensajes de error y éxito */
+.message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 350px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Estilo para los inputs de búsqueda */
+input[type="text"] {
+    background-color: #fff;
+}

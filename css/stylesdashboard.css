@@ -94,6 +94,19 @@
     z-index: 1;
 }
 
+/* Estilo para el mensaje de bienvenida en la página de Inicio */
+.main-content header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px 0;
+}
+
+.main-content header h1.bienvenido {
+    font-size: 2.5rem; /* Aumentar el tamaño solo cuando se está en "Inicio" */
+    color: #ecf0f1; /* Cambiar el color de fuente a blanco o cualquier color que desees */
+}
+
 .sidebar.collapsed + .main-content {
     margin-left: 60px;
     transition: margin-left 0.3s;

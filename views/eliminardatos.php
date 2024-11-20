@@ -12,7 +12,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
 
 global $host, $namedb, $userdb, $passwordb;
 $conecxion = new conexion($host, $namedb, $userdb, $passwordb);
-$pdo = $conecxion->obtenerconexion();  
+$pdo = $conecxion->obtenerconexion();
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $sentencia = $pdo->prepare("DELETE FROM usuarios WHERE username = ?");
         $sentencia->execute([$tmpdatusuarios]);
-        echo $tmpdatusuarios. " ha sido eliminado";
+        echo $tmpdatusuarios . " ha sido eliminado";
     } catch (PDOException $e) {
         echo "no se pude eliminar: ";
         echo $e->getMessage();
@@ -33,11 +33,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>ELIMINAR USUARIO</h2>
-<form action="" method="POST">
-    <label for="">AQUIEN DESEA ELIMINAR:</label>
-    <input type="text" name="datusuario" id="datususuario" required>
-    <br>
-    <button type="submit">Eliminar</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Datos</title>
+    <link rel="stylesheet" href="../css/styleseliminardatos.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>ELIMINAR USUARIO</h2>
+        <form action="" method="POST">
+            <label for="">AQUIEN DESEA ELIMINAR:</label>
+            <input type="text" name="datusuario" id="datsuario" required>
+            <br>
+            <button type="submit">Eliminar</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

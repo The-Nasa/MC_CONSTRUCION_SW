@@ -26,7 +26,7 @@ header("Refresh: 3; url=" . get_UrlBase('index.php'));
 <body>
     <div class="logout-container">
         <h1>SALIENDO DEL SISTEMA</h1>
-        <p>======================</p>
+        <p>XD</p>
         <svg class="spinner" width="100" height="100" viewBox="0 0 50 50">
             <circle cx="25" cy="25" r="20"></circle>
         </svg>
