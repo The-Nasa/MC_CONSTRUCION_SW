@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url(' ../img/fondo-login.jpg') no-repeat center center fixed;
+    /* Fondo de pantalla completo */
+    background-size: cover;
+}
+
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+.spinner {
+    margin-top: 20px;
+}
+
+.spinner circle {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 4;
+    stroke-linecap: round;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        stroke-dasharray: 0, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 100, 150;
+        stroke-dashoffset: -25;
+    }
+    100% {
+        stroke-dasharray: 0, 150;
+        stroke-dashoffset: -125;
+    }
+}

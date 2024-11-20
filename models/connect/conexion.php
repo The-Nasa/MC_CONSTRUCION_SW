@@ -2,6 +2,7 @@
 
 require_once $_SERVER["DOCUMENT_ROOT"] . '/etc/config.php';
 
+
 class conexion
 {
 
@@ -19,11 +20,16 @@ class conexion
         $this->userdb = $userdb;
         $this->passwordb = $passwordb;
         $this->charset = $charset;
-    }
 
+        $this->conectar();
+        
+    }
+    
     public function conectar()
     {
-        $dns = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
+        $dns = "mysql:host=localhost;dbname={$this->namedb};charset={$this->charset}";
+        
+       //$dns = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
         try {
             $this->pdo = new PDO($dns, $this->userdb, $this->passwordb);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,16 +38,18 @@ class conexion
         }
     }
 
+ 
+
     public function obtenerconexion()
     {
-        return $this->pdo;
+        if ($this->pdo) {
+            return $this->pdo;
+        } 
     }
 
     public function contesta()
     {
         $dns = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
         return $dns;
-        //return "TEXTO";
-        //return $this->host.'|'.$this->namedb.'|'.$this->userdb.'|';
     }
-}
+} 

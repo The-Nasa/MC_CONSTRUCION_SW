@@ -1,7 +1,7 @@
 <?php
 
 $_urlBase = "http://MC_CONSTRUCION_SW.test/";
-$host = 'localhost ';
+$host = '127.0.0.1';
 $namedb = 'dbsistema';
 $userdb = 'root';
 $passwordb = '';
@@ -24,7 +24,4 @@ function get_controllers($arg1)
 {
     return $GLOBALS['_urlBase'] . 'controllers/' . $arg1;
 }
-
-//echo $_urlBase;
-//echo "<br>";
-//echo getUrlBase('pagina.html');
+?>

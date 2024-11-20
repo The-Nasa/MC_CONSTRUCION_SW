@@ -6,7 +6,8 @@ if (!isset($_SESSION["txtusername"])) {
 }
 require_once $_SERVER["DOCUMENT_ROOT"] . '/etc/config.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
-?>
+require_once $_SERVER["DOCUMENT_ROOT"] . '/controllers/viewcontroller.php';
+?> 
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +16,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema</title>
-    <link rel="stylesheet" href="<?php echo get_UrlBase ('css/stylesdashboard.css')?>">
+    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesdashboard.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -31,7 +32,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
             <li><a href="?opcion=ingresar"><i class="fas fa-user-plus"></i> <span>Ingresar</span></a></li>
             <li><a href="?opcion=modificar"><i class="fas fa-user-edit"></i> <span>Modificar</span></a></li>
             <li><a href="?opcion=eliminar"><i class="fas fa-user-times"></i> <span>Eliminar</span></a></li>
-            <li><a href="<?php echo get_controllers('logout.php') ?>"><i class="fas fa-sign-out-alt"></i> <span>Salir</span></a></li>
+            <li><a ID="btnSalir" href="<?php echo get_controllers('logout.php') ?>"><i class="fas fa-sign-out-alt"></i> <span>Salir</span></a></li>
         </ul>
     </nav>
 
@@ -39,17 +40,14 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
     <div class="main-content">
         <header>
             <h1>Bienvenido, <?php echo $_SESSION["txtusername"]; ?></h1>
-            <p>Gestiona las opciones del sistema desde el menú de la izquierda.</p>
+
         </header>
-        
+
         <section class="contenido-dinamico">
             <?php
-            if (isset($_GET["opcion"])) {
-                $opcion = $_GET["opcion"];
-                echo $opcion;
-            } else {
-                echo "<h2>Bienvenido</h2><p>Selecciona una opción del menú.</p>";
-            }
+            $opcion = $_GET["opcion"] ?? null;
+            $viewController = new ViewController();
+            echo $viewController->renderContent($opcion);
             ?>
         </section>
     </div>

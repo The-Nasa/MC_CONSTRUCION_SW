@@ -1,6 +1,50 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . '/etc/config.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
+
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $v_username = "";
+    $v_password = "";
+
+    if (isset($_POST["txtusername"])) {
+        $v_username = $_POST["txtusername"];
+    }
+
+    if (isset($_POST["txtpassword"])) {
+        $v_password = $_POST["txtpassword"];
+    }
+
+    // Conexión con la base de datos
+    $conecxion = new conexion($host, $namedb, $userdb, $passwordb);
+    $conecxion->conectar();
+    $pdo = $conecxion->obtenerconexion();
+
+    // Preparar la consulta para obtener el usuario y la contraseña
+    $stmt = $pdo->prepare("SELECT id, username, password, perfil FROM usuarios WHERE username = :username");
+    $stmt->execute(['username' => $v_username]);
+    $user = $stmt->fetch();
+
+    // Verificamos si el usuario existe y si la contraseña es correcta
+    if ($user && strcmp($v_username, $user['username']) === 0 && $v_password === $user['password']) {
+        // Si el nombre de usuario y la contraseña son correctos
+        $_SESSION["txtusername"] = $v_username;
+        $_SESSION["txtpassword"] = $v_password;
+        header('Location: ' . get_views('dashboard.php')); // Redirige al dashboard
+    } else {
+        // Si las credenciales no son correctas
+        header('Location: ' . get_views('claveequivocada.php')); // Redirige a error de clave
+    }
+}
+
+// Si ya hay una sesión activa, redirigir al dashboard
+if (isset($_SESSION["txtusername"])) {
+    header('Location: ' . get_views('dashboard.php'));
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,49 +59,6 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
 
 <body>
 
-    <?php
-
-    session_start();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //echo "<br>";
-        //echo "SE EMBIARON LAS SIGUIENTES VARIABLES: ";
-        //echo "<br>";
-        //echo $_POST["txtusername"];
-        //echo "<br>";
-        //echo $_POST["txtpassword"];
-        //echo "<br>";
-
-        $v_username = "";
-        $v_password = "";
-
-        if (isset($_POST["txtusername"])) {
-            $v_username = $_POST["txtusername"];
-        }
-
-        if (isset($_POST["txtpassword"])) {
-            $v_password = $_POST["txtpassword"];
-        }
-
-        if (($v_username == "admin" && $v_password == "1234")) {
-            $_SESSION["txtusername"] = $v_username;
-            $_SESSION["txtpassword"] = $v_password;
-            //header("location: dashboard.php");
-            header('Location: ' . get_views('dashboard.php'));
-            //echo "dashboard";
-        } else {
-            //header("Location: claveequivocada.php");
-            header('Location: ' . get_views('claveequivocada.php'));
-            //echo "clave equivocada";
-        }
-    }
-
-    //en caso de que el usuario no se haya logueado - precione directamente sobre la URL inicial
-    //ya hay un usuario logueado, asi que le pongo en pantalla
-    if (isset($_SESSION["txtusername"])) {
-        //header("Location: dashboard.php");
-        header('Location: ' . get_views('dashboard.php'));
-    }
-    ?>
 
     <main class="login-container">
         <!-- Formulario de inicio de sesión -->
