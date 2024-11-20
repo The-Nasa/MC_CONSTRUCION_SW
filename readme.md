@@ -16,7 +16,7 @@ Este proyecto ha evolucionado desde un simple formulario de inicio de sesión ha
 
 - **🔐 Sistema de Autenticación Seguro**
   - Interfaz de inicio de sesión intuitiva
-  - Gestión  de sesiones
+  - Gestión de sesiones
 
 - **📊 Panel de Control**
   - Acceso rápido a funciones principales
