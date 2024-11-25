@@ -33,7 +33,7 @@ $pdo = $conecxion->obtenerconexion();
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $tmpdatusuarios = $_POST["datusuario"];
+    $tmpdatusuario = $_POST["datusuario"];
 
     $conecxion = new conexion($host, $namedb, $userdb, $passwordb);
     $pdo = $conecxion->obtenerconexion();
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             $sentencia = $pdo->prepare("UPDATE usuarios SET username = ?, password = ?, perfil = ? WHERE id = ?;");
             $sentencia->execute([$_POST["datusuario"], $_POST["datpassword"], $_POST["datperfil"], $_POST["custid"]]);
-            echo '<div class="message success">' . $tmpdatusuarios . " modificación exitosa</div>";
+            echo '<div class="message success">' . $tmpdatusuario . " modificación exitosa</div>";
         } catch (PDOException $e) {
             echo '<div class="message error">No se pudo modificar: ' . $e->getMessage() . '</div>';
         }
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Buscar usuario en la base de datos
         try {
             $query = $pdo->prepare("SELECT id, username, password, perfil FROM usuarios WHERE username = ?");
-            $query->execute([$tmpdatusuarios]);
+            $query->execute([$tmpdatusuario]);
             $fila = $query->fetch(PDO::FETCH_ASSOC);
 
             if ($fila) {

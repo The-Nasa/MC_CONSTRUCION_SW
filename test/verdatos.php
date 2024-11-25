@@ -13,7 +13,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
 global $host, $namedb, $userdb, $passwordb;
 
 $conecxion = new conexion($host, $namedb, $userdb, $passwordb);
-$conecxion->conectar();
+//$conecxion->conectar();
 $pdo = $conecxion->obtenerconexion();
 
 $query = $pdo->query("SELECT id, username, password, perfil FROM usuarios");

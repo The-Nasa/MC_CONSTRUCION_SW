@@ -18,7 +18,7 @@ $pdo = $conecxion->obtenerconexion();
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $tmpdatusuarios = $_POST["datusuario"];
+    $tmpdatusuario = $_POST["datusuario"];
     $tmpdatpassword = $_POST["datpassword"];
     $tmpdatperfil = $_POST["datperfil"];
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $sentencia = $pdo->prepare("INSERT INTO usuarios(username, password, perfil) VALUES (?,?,?)");
-        $sentencia->execute([$tmpdatusuarios, $tmpdatpassword, $tmpdatperfil]);
+        $sentencia->execute([$tmpdatusuario, $tmpdatpassword, $tmpdatperfil]);
         echo "usuario ingresado con exito";
     } catch (PDOException $e) {
         echo "ubo un error: ";
@@ -36,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit(); //CORTA LA EJECUCION
 
 }
+//SE PUSO EN vistaingresarusuario.php
+//todo
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,11 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>INGRESAER USUARIO</h2>
         <form action="" method="POST">
             <label for="datusuario">Usuario</label>
-            <input type="text" name="datusuario" id="datusuario">
+                <input type="text" name="datusuario" id="datusuario">
             <label for="datpassword">Password</label>
-            <input type="password" name="datpassword" id="datpassword">
+                <input type="password" name="datpassword" id="datpassword">
             <label for="datperfil">Perfil</label>
-            <input type="text" name="datperfil" id="datperfil">
+                <input type="text" name="datperfil" id="datperfil">
 
             <button type="submit">Ingresar Usuario</button>
         </form>

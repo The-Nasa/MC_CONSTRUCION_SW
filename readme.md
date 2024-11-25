@@ -88,7 +88,7 @@ Este proyecto ha evolucionado desde un simple formulario de inicio de sesión ha
 
 ## 📧 Contacto
 
-- - [meselemias.tapullima@unas.edu.pe](mailto:meselemias.tapullima@unas.edu.pe)
+- [meselemias.tapullima@unas.edu.pe](mailto:meselemias.tapullima@unas.edu.pe)
 
 Enlace del Proyecto: [https://github.com/The-Nasa/MC_CONSTRUCION_SW](https://github.com/The-Nasa/MC_CONSTRUCION_SW)
 

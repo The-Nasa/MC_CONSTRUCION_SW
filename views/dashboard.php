@@ -1,11 +1,10 @@
 <?php
-session_start();
+session_start(); 
 if (!isset($_SESSION["txtusername"])) {
     header('Location: ' . get_UrlBase('index.php'));
     exit();
 }
 require_once $_SERVER["DOCUMENT_ROOT"] . '/etc/config.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/models/connect/conexion.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/controllers/viewcontroller.php';
 ?> 
 
