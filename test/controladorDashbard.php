@@ -63,4 +63,6 @@ class controladorDashboard {
         return ob_get_clean();
     }
 }
+
+// Crear una instancia de controladorDashboard
 ?>
