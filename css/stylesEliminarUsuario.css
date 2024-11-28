@@ -48,7 +48,7 @@ input[type="text"] {
 
 /* Estilo para el botón */
 button {
-    background-color: #e74c3c;
+    background-color: red;
     color: white;
     border: none;
     padding: 12px 20px;

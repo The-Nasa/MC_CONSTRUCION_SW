@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Datos</title>
-    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesverdatos.css') ?>">
+    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesVistaUsuario.css') ?>">
 </head>
 <body>
 <div class="container">

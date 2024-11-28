@@ -7,7 +7,8 @@ function mostrarFormularioEliminar($mensaje = '') {
 <html lang="en">
 <head>
     <title>Eliminar Datos</title>
-    <link rel="stylesheet" href="../css/styleseliminardatos.css">
+    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesEliminarUsuario.css') ?>">
+    
 </head>
 <body>
     <div class="container">

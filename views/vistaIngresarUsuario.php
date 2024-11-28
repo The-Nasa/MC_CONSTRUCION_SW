@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar Datos</title>
-    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesingresardatos.css') ?>">
+    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesIngresarUsuario.css') ?>">
 
 </head>
 

@@ -2,13 +2,17 @@
 
 function mostrarFormularioBusqueda($mensaje = '')
 {
-    if ( !empty($mensaje)) {
+    if (!empty($mensaje)) {
         echo $mensaje;
     }
 ?>
+
+    
 <head>
-    <link rel="stylesheet" href="../css/styleseliminardatos.css">
-</head>
+<link rel="stylesheet" href="../css/stylesActualizarUsuario.css">
+
+    </head>
+    
     <div class="container">
         <h2>Modificar Usuario</h2>
         <form action="/controllers/controladorActualizarUsuario.php" method="POST">
@@ -23,10 +27,11 @@ function mostrarFormularioBusqueda($mensaje = '')
 function mostrarFormularioEdicion($usuario, $mensaje = '')
 {
 ?>
-<head>
-    <link rel="stylesheet" href="../css/styleseliminardatos.css">
-</head>
 
+    <head>
+<link rel="stylesheet" href="../css/stylesActualizarUsuario.css">
+
+    </head>
     <div class="container">
         <h2>Modificar Usuario</h2>
         <form action="/controllers/controladorActualizarUsuario.php" method="POST">

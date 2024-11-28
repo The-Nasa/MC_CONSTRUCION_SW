@@ -32,6 +32,5 @@ if (isset($_SESSION["txtusername"])) {
     exit();
 }
 
-// Llamar a la vista
 require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaLogin.php';
 ?>

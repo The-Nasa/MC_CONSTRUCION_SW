@@ -8,9 +8,9 @@ function mostrarLogin() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sistema</title>
-        <link rel="stylesheet" href="<?php echo get_UrlBase('css/styles.css') ?>">
+        <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesLogin.css') ?>">
     </head>
-
+    
     <body>
         <main class="login-container">
             <!-- Formulario de inicio de sesión -->

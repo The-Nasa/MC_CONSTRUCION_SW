@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaDashboard.php';
 
-class controladorDashboard {
+class controladorDashbard {
     private $vista;
 
     public function __construct() {
@@ -41,6 +41,7 @@ class controladorDashboard {
     }
 
     private function ver() {
+        ob_start();
         include $_SERVER['DOCUMENT_ROOT'] . '/controllers/controladorUsuario.php';
         return ob_get_clean();
     }
@@ -63,6 +64,4 @@ class controladorDashboard {
         return ob_get_clean();
     }
 }
-
-// Crear una instancia de controladorDashboard
 ?>
