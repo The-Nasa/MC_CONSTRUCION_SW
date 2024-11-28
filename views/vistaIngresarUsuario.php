@@ -20,11 +20,13 @@
       
         <form action="/controllers/controladorIngresarUsuario.php " method="POST">
             <label for="datusuario">Usuario</label>
-                <input type="text" name="datusuario" id="datusuario">
+                <input type="text" name="datusuario" id="datusuario" autocomplete="off">
+
             <label for="datpassword">Password</label>
-                <input type="password" name="datpassword" id="datpassword">
+                <input type="password" name="datpassword" id="datpassword" autocomplete="off">
+
             <label for="datperfil">Perfil</label>
-                <input type="text" name="datperfil" id="datperfil">
+                <input type="text" name="datperfil" id="datperfil" autocomplete="off">
 
             <button type="submit">Ingresar Usuario</button>
         </form>

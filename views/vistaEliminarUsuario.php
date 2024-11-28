@@ -1,12 +1,11 @@
 <?php
-function mostrarFormularioEliminar($mensaje) {
-    if (empty($mensaje)) {
+function mostrarFormularioEliminar($mensaje = '') {
+    if ( !empty($mensaje)) {
+        echo $mensaje;
+     }else {
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Datos</title>
     <link rel="stylesheet" href="../css/styleseliminardatos.css">
 </head>
@@ -23,8 +22,6 @@ function mostrarFormularioEliminar($mensaje) {
 </body>
 </html>
 <?php
-    } else {
-        echo $mensaje;
     }
 }
 ?>

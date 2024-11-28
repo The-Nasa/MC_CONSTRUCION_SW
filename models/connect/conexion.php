@@ -49,11 +49,4 @@ class Conexion
         return $dns;
     }
 } 
-//try{
-    //$conexion = Conexion::obtenerConexion();
-    //echo "conexion exitosa";
-//}catch(Exception $e){
-    //echo $e->getMessage();
-    
-//}
 ?>

@@ -21,8 +21,6 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    overflow-y: auto; /* Permite desplazamiento vertical si el contenido sobrepasa el límite */
-    overflow-x: hidden;
     background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
@@ -31,7 +29,7 @@
     flex-direction: column;
     color: var(--sidebar-text);
     transition: width 0.3s;
-    z-index: 2; /* Asegúrate de que esté por encima del contenido */
+    z-index: 1000; /* Asegúrate de que esté por encima del contenido */
 }
 
 .sidebar.collapsed {
@@ -50,10 +48,9 @@
 }
 
 .sidebar ul {
-    list-style: none;
-    margin-top: 10px;
-    width: 100%;
-}
+    list-style-type: none;
+    padding: 0;
+    margin: 0;}
 
 .sidebar ul li {
     transition: background-color 0.3s;

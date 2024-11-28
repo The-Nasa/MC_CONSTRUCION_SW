@@ -1,100 +1,133 @@
-/* Estilo general para el cuerpo de la página */
+/* General */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #588383;
+    background-color: var(--content-bg);
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
-/* Contenedor principal del formulario */
-.container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+/* Contenedor Principal */
+.container-dashboard {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
     width: 100%;
-    max-width: 480px;
-    text-align: center;
 }
 
-/* Título del formulario */
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Estilo para los formularios */
-form {
+/* Menú lateral */
+.sidebar {
+    width: 250px;
+    background-color: var(--menu-bg);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0;
 }
 
-/* Estilo para las etiquetas de los campos */
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 90%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--menu-hover-bg);
+}
+
+/* Contenedor de la sección principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Formulario */
+.container-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
 label {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-/* Estilo para los inputs */
 input[type="text"],
 input[type="password"] {
-    padding: 12px;
+    width: 100%;
+    padding: 10px;
     margin-bottom: 15px;
-    width: 80%;
-    max-width: 350px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
 }
 
-/* Estilo para el botón */
 button {
-    background-color: #3498db;
+    background-color: var(--button-primary-bg);
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
-    width: 80%;
-    max-width: 350px;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: var(--button-primary-hover);
 }
 
-/* Mensajes de error y éxito */
 .message {
-    padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 350px;
     text-align: center;
-    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-radius: 4px;
 }
 
 .success {
-    background-color: #2ecc71;
-    color: white;
+    color: green;
 }
 
 .error {
-    background-color: #e74c3c;
-    color: white;
+    color: red;
 }
 
-/* Estilo para los inputs de búsqueda */
-input[type="text"] {
-    background-color: #fff;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

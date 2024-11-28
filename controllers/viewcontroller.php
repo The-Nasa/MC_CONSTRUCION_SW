@@ -38,7 +38,7 @@ class ViewController
     private function modificar()
     {
         
-        include $_SERVER['DOCUMENT_ROOT'] . '/views/modificardatos.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/controllers/controladorActualizarUsuario.php';
     }
 
     private function eliminar()
@@ -46,6 +46,6 @@ class ViewController
         //echo "<iframe src='" . get_controllers("controladorEliminarUsuario.php") . "'></iframe>";
 
         //include $_SERVER['DOCUMENT_ROOT'] . '/controllers/controladorEliminarUsuario.php';
-        include $_SERVER['DOCUMENT_ROOT'] . '/views/eliminardatos.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/controllers/controladorEliminarUsuario.php';
     }
 }

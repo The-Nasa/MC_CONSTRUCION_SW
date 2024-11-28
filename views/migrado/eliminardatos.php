@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "no se pude eliminar: ";
         echo $e->getMessage();
     }
-    exit(); //CORTA LA EJECUCION
 
 }
 ?>

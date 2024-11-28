@@ -2,7 +2,6 @@
     function mostrarUsuarios($usuarios) {
     
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,8 @@
                 <th>Username</th>
                 <th>Password</th>
                 <th>Perfil</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
             </tr>
             <?php
             // Ejecutar consulta y mostrar los datos
@@ -30,6 +31,10 @@
                 <td><?php echo $usuario['username']; ?></td>
                 <td><?php echo $usuario['password']; ?></td>
                 <td><?php echo $usuario['perfil']; ?></td>
+                
+                <td> <a href="/controllers/controladorEliminarUsuario.php?accion=eliminar&usuario=<?php echo urlencode($usuario['username']); ?>">eliminar</a></td>   
+                
+                <td> <a href="/controllers/controladorActualizarUsuario.php?accion=editar&usuario=<?php echo urlencode($usuario['username']); ?> ">editar</a> </td>
             </tr>
             <?php
             }
