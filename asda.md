@@ -5,6 +5,7 @@ Sistema integral de gestión con interfaz intuitiva y diseño adecuado,
 
 ## 🎨 Interfaces
 ![Login Screen](https://github.com/user-attachments/assets/a26bb454-bbf8-444e-aeb2-28cf58789bf1)
+![Main Dashboard](https://github.com/user-attachments/assets/6940670b-2f22-4504-8f56-9aa4a2155ed3)
 
 ## 🌟 Características
 - Sistema de autenticación seguro

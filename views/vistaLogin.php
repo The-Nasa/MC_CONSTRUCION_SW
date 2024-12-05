@@ -27,7 +27,8 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <!-- Mensaje de error (si ocurre) -->
-        <div id="error-message" style="color: red; margin-top: 10px;"></div>
+        <div id="error-message" class="error-message"></div>
+
     </main>
 
     <script src="/js/validarUsuario.js"></script>

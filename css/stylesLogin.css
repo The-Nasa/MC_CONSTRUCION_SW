@@ -88,6 +88,25 @@ body {
     background-color: rgb(29, 71, 71);
 }
 
+  /* Estilos para el mensaje de error */
+  .error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Lo mantenemos oculto hasta que sea necesario mostrarlo */
+  }
+  
+  /* Para mostrar el mensaje de error cuando sea necesario */
+  #error-message.show {
+    display: block;
+  }
+  
 /* Ajustes Responsivos */
 @media (max-width: 400px) {
     .login-container {

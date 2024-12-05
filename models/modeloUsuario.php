@@ -32,23 +32,25 @@ class modeloUsuario
 
         // Statemenent o sentencia
         $stmt = $this->conexion->prepare($query);
-        $stmt->bindParam(':username', $username, );
-        $stmt->bindParam(':password', $password , );
+        $stmt->bindParam(':username', $username,);
+        $stmt->bindParam(':password', $password,);
         $stmt->bindParam(':perfil', $perfil,);
 
         return $stmt->execute();
     }
     // debe hacer un metodo para haser un delete
-    public function eliminarUsuarioPorNombre($username){ 
-    $query = "DELETE FROM usuarios WHERE username = :username";
+    public function eliminarUsuarioPorNombre($username)
+    {
+        $query = "DELETE FROM usuarios WHERE username = :username";
 
-    //Statemenent o sentencia
-    $stmt = $this->conexion->prepare($query);
-    $stmt->bindParam(':username', $username, );
-    return $stmt->execute();
- }   
+        //Statemenent o sentencia
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username,);
+        return $stmt->execute();
+    }
     // debe hacer un metodo para haser un update
-    public function actualizarUsuario($id, $username, $password, $perfil){
+    public function actualizarUsuario($id, $username, $password, $perfil)
+    {
         $query = "UPDATE usuarios SET username = :username, password = :password, perfil = :perfil WHERE id = :id";
 
         $stmt = $this->conexion->prepare($query);
@@ -58,7 +60,6 @@ class modeloUsuario
         $stmt->bindParam(':perfil', $perfil);
 
         return $stmt->execute();
-
     }
     public function obtenerUsuarioPorNombre($username)
     {
@@ -68,23 +69,31 @@ class modeloUsuario
         $stmt->bindParam(':username', $username);
 
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);// solo un registro
+        return $stmt->fetch(PDO::FETCH_ASSOC); // solo un registro
     }
 
 
     // parte del login
-    public function verificarUsuario($username, $password) {
-        $query ="SELECT id, username, password, perfil FROM usuarios WHERE username = :username";
+    public function verificarUsuario($username, $password)
+    {
+        $query = "SELECT id, username, password, perfil FROM usuarios WHERE username = :username";
         $stmt = $this->conexion->prepare($query);
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
-
         if ($user && strcmp($username, $user['username']) == 0 && $password == $user['password']) {
             return $user;
         }
 
         return false; // Si no se encuentra el usuario o las credenciales son incorrectas
     }
-    
+    // Método para verificar si el usuario existe
+    public function verificarExistenciaUsuario($username)
+    {
+        $query = "SELECT * FROM usuarios WHERE username = :username";
+        $stmt = $this->  conexion->prepare($query);
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0; // Si existe, devuelve true, sino false
+    }
 }
-?>

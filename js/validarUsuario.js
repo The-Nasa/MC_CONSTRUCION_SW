@@ -8,6 +8,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     // Verificamos si los campos están vacíos
     if (!username || !password) {
         errorMessage.textContent = 'Por favor, ingresa ambos campos';
+        errorMessage.classList.add('show'); // Mostrar el mensaje de error
         return;
     }
 
@@ -24,16 +25,23 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
             })
         });
 
-        // Si la respuesta es correcta, redirigimos al usuario
         if (response.ok) {
-            const result = await response.text();
-            if (result.includes('Location: ')) {
-                window.location.href = result.split('Location: ')[1];
-            }
+            // Si la respuesta es ok (200), redirigimos al dashboard
+            window.location.href = '/controllers/controladorDashboard.php';
         } else {
-            throw new Error('Credencialessss incorrectas');
+            // Manejo de errores basado en el código de estado HTTP
+            if (response.status == 400) {
+                errorMessage.textContent = 'Usuario no encontrado';
+            } else if (response.status == 401) {
+                errorMessage.textContent = 'Contraseña incorrecta';
+            } else {
+                errorMessage.textContent = 'Hubo un problema al procesar la solicitud. Intenta nuevamente.';
+            }
+            errorMessage.classList.add('show'); // Mostrar el mensaje de error
         }
     } catch (error) {
-        errorMessage.textContent = error.message;
+        // Si hay algún error en la conexión o la petición
+        errorMessage.textContent = 'Hubo un problema con la conexión. Intenta nuevamente.';
+        errorMessage.classList.add('show'); // Mostrar el mensaje de error
     }
 });
