@@ -16,23 +16,29 @@ function get_path($type, $arg1){
     return $basePath[$type].$arg1;
 }
 
-function get_UrlBase($arg1)
-{
+function get_UrlBase($arg1){
     return get_path('base', $arg1);
 }
 
-function get_views($arg1)
-{
+function get_views($arg1){
     return get_path('views', $arg1);
 }
 
-function get_models($arg1)
-{
+function get_models($arg1){
     return get_path('models', $arg1);
 }
-function get_controllers($arg1)
-{
+
+function get_controllers($arg1){
     return get_path('controllers', $arg1);
 }
+
+function get_views_disk($arg1) {
+    return $_SERVER["DOCUMENT_ROOT"] . '/views/'.$arg1;
+}
+
+function get_controllers_disk($arg1){
+    return $_SERVER["DOCUMENT_ROOT"] . '/controllers/'.$arg1;
+}
+
 //echo get_UrlBase('');   
 ?>

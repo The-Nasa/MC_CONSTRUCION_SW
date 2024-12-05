@@ -10,18 +10,13 @@ class modeloUsuario
     //al instarciar la clase debo tener la coneccion
     public function __construct()
     {
-        // $this->conexion = new conexion();
         $this->conexion = Conexion::obtenerConexion();
-        //return $this->conexion;
     }
 
     //debe hacer un metodo para haser un select
     public function obtenerUsuarios()
     {
         $query = $this->conexion->query("SELECT id, username, password, perfil FROM usuarios");
-
-        // Statemenent
-        //$stmt = $this->conexion->prepare($query);
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -79,11 +74,12 @@ class modeloUsuario
 
     // parte del login
     public function verificarUsuario($username, $password) {
-        $stmt = $this->conexion->prepare("SELECT id, username, password, perfil FROM usuarios WHERE username = :username");
+        $query ="SELECT id, username, password, perfil FROM usuarios WHERE username = :username";
+        $stmt = $this->conexion->prepare($query);
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
 
-        if ($user && strcmp($username, $user['username']) === 0 && $password === $user['password']) {
+        if ($user && strcmp($username, $user['username']) == 0 && $password == $user['password']) {
             return $user;
         }
 

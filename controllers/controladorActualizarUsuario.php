@@ -9,7 +9,7 @@ if (!isset($_SESSION["txtusername"])) {
 }
 
 require_once $_SERVER["DOCUMENT_ROOT"] . '/models/modeloUsuario.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaActulizarUsuario.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/views/vistaActualizarUsuario.php';
 
 $mensaje = '';
 $modeloUsuario = new modeloUsuario();
@@ -44,11 +44,13 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             $modeloUsuario->actualizarUsuario($tmpcustID, $tmpdatusuario, $tmpdatpassword, $tmpdatperfil);
             $mensaje = "Usuario actualizado con éxito.";
+            $usuario = $modeloUsuario->obtenerUsuarioPorNombre($tmpdatusuario);
         } catch (PDOException $e) {
             $mensaje = "Error al actualizar el usuario: " . $e->getMessage();
+            $usuario = null; // No hay usuario que mostrar si hay error
         }
 
-        mostrarFormularioEdicion($mensaje);
+        mostrarFormularioEdicion($usuario, $mensaje); // Pasar $usuario y $mensaje
     } elseif (isset($_POST["buscarusuario"])) { // Buscar usuario para editar
         $tmpdatusuario = $_POST["buscarusuario"];
         $usuario = $modeloUsuario->obtenerUsuarioPorNombre($tmpdatusuario);

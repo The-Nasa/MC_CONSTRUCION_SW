@@ -1,85 +1,143 @@
-/* styleseActualizarUsuario.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+/* Reset and base styles */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --error-color: #dc2626;
+    --success-color: #16a34a;
+    --background-color: #f3f4f6;
+    --card-background: #ffffff;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background: #ffffff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Container styles */
+  .container {
+    background-color: var(--card-background);
+    border-radius: 0.75rem;
+    padding: 2rem;
     width: 100%;
-}
-
-h2 {
+    max-width: 28rem;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
-    margin-bottom: 20px;
-    color: #333333;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555555;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button:active {
-    background-color: #004494;
-}
-
-input:focus,
-button:focus {
-    outline: none;
-    border: 1px solid #007BFF;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-form {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form styles */
+  form {
     display: flex;
     flex-direction: column;
-}
-
-@media (max-width: 500px) {
+    gap: 1rem;
+  }
+  
+  /* Label styles */
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  /* Button styles */
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  /* Message styles */
+  .error-message,
+  .success-message {
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .error-message {
+    background-color: #fef2f2;
+    border: 1px solid #fee2e2;
+    color: var(--error-color);
+  }
+  
+  .success-message {
+    background-color: #f0fdf4;
+    border: 1px solid #dcfce7;
+    color: var(--success-color);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
     .container {
-        padding: 15px;
+      padding: 1.5rem;
     }
-
+    
+    h2 {
+      font-size: 1.25rem;
+    }
+    
     button {
-        font-size: 14px;
+      padding: 0.75rem 1rem;
     }
-}
+  }
