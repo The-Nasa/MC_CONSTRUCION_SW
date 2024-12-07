@@ -1,43 +1,35 @@
 <?php
-    function mostrarFormularioingreso($mensaje) {
-        if (empty($mensaje)) {      
+function mostrarFormularioingreso($mensaje)
+{
+    if (empty($mensaje)) {
 ?>
-<!DOCTYPE html>
-<html lang="en">
+        <div class="form-container">
+            <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesIngresarUsuario.css'); ?>">
+            <h2>INGRESAR USUARIO v2</h2>
+            <p class="mensaje"><?php echo htmlspecialchars($mensaje); ?></p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar Datos</title>
-    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesIngresarUsuario.css') ?>">
+            <form action="/controllers/controladorIngresarUsuario.php" method="POST">
+                <div class="form-group">
+                    <label for="datusuario">Usuario</label>
+                    <input type="text" name="datusuario" id="datusuario" autocomplete="off" required>
+                </div>
 
-</head>
+                <div class="form-group">
+                    <label for="datpassword">Password</label>
+                    <input type="password" name="datpassword" id="datpassword" autocomplete="off" required>
+                </div>
 
-<body>
-    <div class="container">
-        <h2>INGRESAER USUARIO v2</h2>
-            <p class="mensaje"><?php echo ($mensaje); ?></p>
-      
-        <form action="/controllers/controladorIngresarUsuario.php " method="POST">
-            <label for="datusuario">Usuario</label>
-                <input type="text" name="datusuario" id="datusuario" autocomplete="off">
+                <div class="form-group">
+                    <label for="datperfil">Perfil</label>
+                    <input type="text" name="datperfil" id="datperfil" autocomplete="off" required>
+                </div>
 
-            <label for="datpassword">Password</label>
-                <input type="password" name="datpassword" id="datpassword" autocomplete="off">
-
-            <label for="datperfil">Perfil</label>
-                <input type="text" name="datperfil" id="datperfil" autocomplete="off">
-
-            <button type="submit">Ingresar Usuario</button>
-        </form>
-    </div>
-
-</body>
-
-</html>
+                <button type="submit" class="submit-btn">Ingresar Usuario</button>
+            </form>
+        </div>
 <?php
-        } else {
-            echo $mensaje;
-        }
+    } else {
+        echo $mensaje;
     }
+}
 ?>

@@ -1,27 +1,18 @@
 <?php
 function mostrarFormularioEliminar($mensaje = '') {
-    if ( !empty($mensaje)) {
-        echo $mensaje;
-     }else {
+    if (!empty($mensaje)) {
+        echo "<p class='mensaje'>{$mensaje}</p>";
+    } else {
 ?>
-<html lang="en">
-<head>
-    <title>Eliminar Datos</title>
-    <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesEliminarUsuario.css') ?>">
-    
-</head>
-<body>
-    <div class="container">
-        <h2>ELIMINAR USUARIO</h2>
-        <form action="/controllers/controladorEliminarUsuario.php" method="POST">
-            <label for="datusuario">¿A QUIÉN DESEA ELIMINAR?:</label>
-            <input type="text" name="datusuario" id="datusuario" required>
-            <br>
-            <button type="submit">Eliminar</button>
-        </form>
-    </div>
-</body>
-</html>
+        <link rel="stylesheet" href="<?php echo get_UrlBase('css/stylesEliminarUsuario.css'); ?>">
+        <div class="containerdelete">
+            <h1>ELIMINAR USUARIO</h1> 
+            <form action="/controllers/controladorEliminarUsuario.php" method="POST">
+                <label for="datusuario">¿A quién desea eliminar?</label>
+                <input type="text" name="datusuario" id="datusuario" placeholder="Ingrese el nombre del usuario" required>
+                <button type="submit">Eliminar Usuario</button>
+            </form>
+        </div>
 <?php
     }
 }
