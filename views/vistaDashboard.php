@@ -24,7 +24,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/etc/config.php';
             <li><a href="?opcion=ingresar"><i class="fas fa-user-plus"></i> Ingresar</a></li>
             <li><a href="?opcion=modificar"><i class="fas fa-user-edit"></i> Modificar</a></li>
             <li><a href="?opcion=eliminar"><i class="fas fa-user-times"></i> Eliminar</a></li>
-            <li><a id="btnSalir" href="<?php echo get_controllers('logout.php') ?>"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+            <li><a id="btnSalir" href="<?php echo get_controllers('controladorLogout.php') ?>"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
         </ul>
     </nav>
 
