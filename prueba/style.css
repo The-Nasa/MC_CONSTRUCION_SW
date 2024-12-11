@@ -1,0 +1,12 @@
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none; /* Ocultamos el submenú por defecto */
+    background-color: #495057;
+}
+.submenu.active {
+    display: block; /* Muestra el submenú cuando tiene la clase "active" */
+}
+.flecha.rotada {
+    transform: rotate(90deg); /* Rotación al expandir el menú */
+}
